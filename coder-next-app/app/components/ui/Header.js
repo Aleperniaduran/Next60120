@@ -9,7 +9,7 @@ const Header = () => {
                 <Image
                     alt="UC Logo"
                     src={UcLogo}
-                    width={200}
+                    width={180}
                     height={50}
                 />
                 <Menu />
