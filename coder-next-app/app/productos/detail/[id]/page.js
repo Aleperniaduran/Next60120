@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation"
 import { mockData } from "../../../data/products"
 import Image from "next/image"
+import AddToCartButton from "@/app/components/ui/AddToCartButton"
 
 const Detail = ({ params }) => {
     const { id } = params
@@ -34,6 +35,8 @@ const Detail = ({ params }) => {
             <div className="flex gap-10">
                 <button className="border boder-black/100 bg-gray-950 text-white p-4 uppercase hover:text-black hover:bg-white rounded-lg mt-10" onClick={() => router.back()}>Volver</button>
                 <button className="border boder-black/100 bg-gray-950 text-white p-4 uppercase hover:text-black hover:bg-white rounded-lg mt-10" onClick={() => router.back()}>Add to cart</button>
+                
+                 {/* <AddToCartButton /> */}
             </div>
         </div>
     )

@@ -17,7 +17,9 @@ const MenuList = ({open, setOpen}) => {
                     </div>
                     <nav className="flex flex-col gap-4 px-4 text-white">
                         <Link onClick={handleCLose} href={"/"}>Inicio</Link>
+                        <Link onClick={handleCLose} href={"/productos/todos"}>Productos</Link>
                         <Link onClick={handleCLose} href={"/contact"}>Contacto</Link>
+                        <Link onClick={handleCLose} href={"/admin"}>Admin Pannel</Link>
                     </nav>
                 </aside>
             </div>
