@@ -2,9 +2,9 @@
 
 import { useRouter } from "next/navigation"
 import Image from "next/image"
-import AddToCartButton from "@/app/components/ui/AddToCartButton"
 import { db } from "@/app/firebase/config"
 import { doc, getDoc} from "firebase/firestore"
+import ProductDetail from "@/app/components/products/ProductDetail"
 
 const getProduct = async (id) => {
     const docRef = doc(db, 'productos', id)
@@ -41,9 +41,7 @@ const Detail = async ({ params }) => {
 
             <div className="flex gap-10">
                 <button className="border boder-black/100 bg-gray-950 text-white p-4 uppercase hover:text-black hover:bg-white rounded-lg mt-10" onClick={() => router.back()}>Volver</button>
-                <button className="border boder-black/100 bg-gray-950 text-white p-4 uppercase hover:text-black hover:bg-white rounded-lg mt-10" onClick={() => router.back()}>Add to cart</button>
-                
-                 {/* <AddToCartButton /> */}
+                <ProductDetail item={item} />
             </div>
         </div>
     )
