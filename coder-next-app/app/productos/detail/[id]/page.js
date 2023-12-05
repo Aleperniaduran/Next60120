@@ -1,15 +1,22 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import { mockData } from "../../../data/products"
 import Image from "next/image"
 import AddToCartButton from "@/app/components/ui/AddToCartButton"
+import { db } from "@/app/firebase/config"
+import { doc, getDoc} from "firebase/firestore"
 
-const Detail = ({ params }) => {
+const getProduct = async (id) => {
+    const docRef = doc(db, 'productos', id)
+    const docSnapshot = await getDoc( docRef )
+
+    return docSnapshot.data()
+}
+
+const Detail = async ({ params }) => {
     const { id } = params
     const router = useRouter()
-
-    const item = mockData.find(product => product.slug === id)
+    const item = await getProduct( id )
 
     return (
         <div className="container m-auto py-24">
